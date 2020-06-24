@@ -1,0 +1,58 @@
+class Ui_Doctor(object):
+    def setupUi(self, Doctor):
+        Doctor.setObjectName("Doctor")
+        Doctor.resize(547, 239)
+        self.centralwidget = QtWidgets.QWidget(Doctor)
+        self.centralwidget.setObjectName("centralwidget")
+        self.Reply = QtWidgets.QTextEdit(self.centralwidget)
+        self.Reply.setGeometry(QtCore.QRect(20, 90, 511, 61))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        self.Reply.setFont(font)
+        self.Reply.setObjectName("Reply")
+        self.Ask = QtWidgets.QLabel(self.centralwidget)
+        self.Ask.setGeometry(QtCore.QRect(20, 20, 691, 51))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        self.Ask.setFont(font)
+        self.Ask.setObjectName("Ask")
+        self.SendReply = QtWidgets.QPushButton(self.centralwidget)
+        self.SendReply.setGeometry(QtCore.QRect(100, 170, 111, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        self.SendReply.setFont(font)
+        self.SendReply.setObjectName("SendReply")
+        self.ButtonConnect = QtWidgets.QPushButton(self.centralwidget)
+        self.ButtonConnect.setGeometry(QtCore.QRect(340, 170, 111, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        self.ButtonConnect.setFont(font)
+        self.ButtonConnect.setObjectName("ButtonConnect")
+        Doctor.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(Doctor)
+        self.statusbar.setObjectName("statusbar")
+        Doctor.setStatusBar(self.statusbar)
+
+        self.retranslateUi(Doctor)
+        QtCore.QMetaObject.connectSlotsByName(Doctor)
+
+    def retranslateUi(self, Doctor):
+        _translate = QtCore.QCoreApplication.translate
+        Doctor.setWindowTitle(_translate("Doctor", "MainWindow"))
+        self.Ask.setText(_translate("Doctor", "Want to connect?"))
+        self.SendReply.setText(_translate("Doctor", "Send reply"))
+        self.ButtonConnect.setText(_translate("Doctor", "Connect"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Doctor = QtWidgets.QMainWindow()
+    ui = Ui_Doctor()
+    ui.setupUi(Doctor)
+    Doctor.show()
+    sys.exit(app.exec_())
